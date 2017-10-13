@@ -38,7 +38,7 @@
     </path>
   </pathconvert>
   
-  <target name="asm" depends="compile">
+  <target name="asm" depends="testcompile">
     <echo message="Assembling test .j files ===================" />
     <java classname="kilim.tools.Asm" classpathref="kilim.classpath" fork="yes">
       <arg line="-nf -d ./classes" />
@@ -46,14 +46,14 @@
     </java>
   </target>
   
-  <target name="testcompile" depends="asm">
+  <target name="testcompile" depends="compile">
     <echo message="Compiling test ===================" />
     <javac includeantruntime="false" debug="on" srcdir="test" destdir="classes" 
            classpathref="kilim.classpath"/>
   </target>
   
 
-  <target name="weave" depends="testcompile">
+  <target name="weave" depends="asm">
     <echo message="Weaving files ===================" />
     <java classname="kilim.tools.Weaver" fork ="yes">
       <classpath refid="kilim.classpath"/>
