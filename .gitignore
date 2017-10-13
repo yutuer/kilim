@@ -1,4 +1,10 @@
-classes/**/*
-testclasses/**/*
-.DS_Store
-/classes
+.classpath
+.project
+.settings/
+target/
+src/main/java/parseExcel/bean/
+src/main/java/parseExcel/enums/
+.idea/
+libs/
+classes/
+testclasses/

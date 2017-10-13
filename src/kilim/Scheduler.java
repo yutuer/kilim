@@ -8,6 +8,8 @@ package kilim;
 
 import java.util.LinkedList;
 
+import zhmt.dawn.NonpausableTask;
+
 /** 
  * This is a basic FIFO Executor. It maintains a list of
  * runnable tasks and hands them out to WorkerThreads. Note that
@@ -164,4 +166,8 @@ public class Scheduler {
         return false;
     }
     */
+
+	public void schedule(NonpausableTask nonpausableTask) {
+		
+	}
 }

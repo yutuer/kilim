@@ -1,5 +1,9 @@
 <?xml version="1.0"?>
 <project name="kilim" default="all">
+  <echo message="${java.class.path}" />
+  <echo>Java/JVM version: ${ant.java.version}</echo>
+  <echo>Java/JVM detail version: ${java.version}</echo>
+	
   <path id="kilim.classpath">
     <pathelement location="classes/" />
     <fileset dir="./libs">
@@ -22,13 +26,13 @@
   <target name="compile">
     <echo message="Compiling src ===================" />
     <javac includeantruntime="false" debug="on" srcdir="src" destdir="classes" 
-           classpathref="kilim.classpath"/>
+           classpathref="kilim.classpath" />
     <echo message="Compiling examples ===================" />
     <javac includeantruntime="false" debug="on" srcdir="examples" destdir="classes" 
-           classpathref="kilim.classpath"/>
+           classpathref="kilim.classpath" />
     <echo message="Compiling benchmarks ===================" />
     <javac includeantruntime="false" debug="on" srcdir="bench" destdir="classes" 
-           classpathref="kilim.classpath"/>
+           classpathref="kilim.classpath" />
   </target>
   
   <!-- Glob a list of .j files into a space-separated list -->
@@ -49,7 +53,7 @@
   <target name="testcompile" depends="compile">
     <echo message="Compiling test ===================" />
     <javac includeantruntime="false" debug="on" srcdir="test" destdir="classes" 
-           classpathref="kilim.classpath"/>
+           classpathref="kilim.classpath" />
   </target>
   
 
